@@ -26,7 +26,7 @@ f = lambda : pipe(prompt=prompt, image=init_img)
 time_basic_pipeline = benchmark_torch_function(f)
 
 # Half-precision pipeline
-pipe = pipeline.from_pretrained(model,torch_dtype=torch.float16).to(device)
+pipe = pipeline.from_pretrained(model, torch_dtype=torch.float16).to(device)
 f = lambda : pipe(prompt=prompt, image=init_img)
 time_hp_pipeline = benchmark_torch_function(f)
 
@@ -38,7 +38,7 @@ f = lambda : pipe(prompt=prompt, image=init_img)
 time_compiled_pipeline = benchmark_torch_function(f)
 
 # Compiled half-precision pipeline
-pipe = pipeline.from_pretrained(model,torch_dtype=torch.float16).to(device)
+pipe = pipeline.from_pretrained(model, torch_dtype=torch.float16).to(device)
 pipe.unet = torch.compile(pipe.unet)
 pipe(prompt=prompt, image=init_img) # compile warmup
 f = lambda : pipe(prompt=prompt, image=init_img)

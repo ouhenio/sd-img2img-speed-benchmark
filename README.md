@@ -8,7 +8,7 @@ The goal of this repo is to measure and compare different img2img acceleration m
 
 To replicate the results, simply run `main.py`.
 
-Notice that these measurements where done with a RTX 3090.
+Note that these measurements where done with an RTX 3090.
 
 |                           Method | speed (seconds) |
 |---------------------------------:|----------------:|
